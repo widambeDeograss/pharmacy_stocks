@@ -52,7 +52,7 @@ class Sell(models.Model):
 
 class SellProduct(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    pharmacyId = models.ForeignKey(User, on_delete=models.CASCADE)
+    product = models.ForeignKey(Product, on_delete=models.CASCADE)
     sellId = models.ForeignKey(Sell, on_delete=models.CASCADE)
     quantity = models.PositiveBigIntegerField()
     pricePerProduct = models.PositiveIntegerField()
@@ -63,6 +63,7 @@ class Client(models.Model):
     pharmacyId = models.ForeignKey(User, on_delete=models.CASCADE)
     name = models.CharField(max_length=250)
     email = models.EmailField()
+    phone_number = models.CharField(max_length=12)
     pharmacyName = models.CharField(max_length=250)
     createdAt = models.DateTimeField(auto_now=True)
     isActive = models.BooleanField(default=True)
@@ -82,7 +83,7 @@ class Debt(models.Model):
 class DebtProduct(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     debtId = models.ForeignKey(Debt, on_delete=models.CASCADE)
-    pharmacyId = models.ForeignKey(User, on_delete=models.CASCADE)
+    product = models.ForeignKey(Product, on_delete=models.CASCADE)
     quantity = models.PositiveBigIntegerField()
     pricePerProduct = models.PositiveIntegerField()
 
