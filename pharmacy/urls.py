@@ -21,6 +21,7 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('api/pharmacy/', include('pharmacy_sys.urls', namespace='pharmacy_sys')),
     path('api/auth/', include('user_management.urls', namespace='user_management')),
 ]
 if settings.DEBUG:

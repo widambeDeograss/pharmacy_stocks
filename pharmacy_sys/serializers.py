@@ -34,7 +34,8 @@ class ProductPostSerializer(serializers.Serializer):
             "category",
             "code",
             "sellingPrice",
-            "totalStock"
+            "totalStock",
+            "pic"
         ]
 
 

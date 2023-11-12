@@ -10,13 +10,12 @@ class UserSerializer(serializers.ModelSerializer):
         model = User
         fields = [
             'id',
-            'fname',
             'email',
             'password',
             'phone_number',
-            'lname',
-            'role',
-            'gender',
+            'location',
+            'userType',
+            'pharmacyName',
             'profile',
             'username'
         ]

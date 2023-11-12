@@ -20,6 +20,7 @@ class Product(models.Model):
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
     name = models.CharField(max_length=100)
     code = models.CharField(max_length=100)
+    pic = models.ImageField(upload_to="uploads/", null=True, blank=True)
     createdAt = models.DateTimeField(auto_now=True)
     isActive = models.BooleanField(default=True)
     sellingPrice = models.PositiveBigIntegerField()
